@@ -4,7 +4,7 @@ import { CircleMarker as LeafletCircleMarker } from 'leaflet'
 
 import { withLeaflet } from './context'
 import Path from './Path'
-import type { LatLng, PathProps } from './types'
+import type { LatLng, PathProps, latLng } from './types'
 
 type LeafletElement = LeafletCircleMarker
 type Props = {
@@ -20,7 +20,7 @@ class CircleMarker extends Path<LeafletElement, Props> {
   }
 
   updateLeafletElement(fromProps: Props, toProps: Props) {
-    if (toProps.center !== fromProps.center) {
+    if (!latLng(toProps.center).equals(fromProps.center)) {
       this.leafletElement.setLatLng(toProps.center)
     }
     if (toProps.radius !== fromProps.radius) {
