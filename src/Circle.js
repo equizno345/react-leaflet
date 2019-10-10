@@ -4,7 +4,7 @@ import { Circle as LeafletCircle } from 'leaflet'
 
 import { withLeaflet } from './context'
 import Path from './Path'
-import type { LatLng, MapLayerProps, PathOptions } from './types'
+import type { LatLng, MapLayerProps, PathOptions, latLng } from './types'
 
 type LeafletElement = LeafletCircle
 type Props = {
@@ -21,7 +21,7 @@ class Circle extends Path<LeafletElement, Props> {
   }
 
   updateLeafletElement(fromProps: Props, toProps: Props) {
-    if (toProps.center !== fromProps.center) {
+    if (!latLng(toProps.center).equals(fromProps.center)) {
       this.leafletElement.setLatLng(toProps.center)
     }
     if (toProps.radius !== fromProps.radius) {
