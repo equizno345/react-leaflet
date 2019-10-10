@@ -1,10 +1,10 @@
 // @flow
 
-import { CircleMarker as LeafletCircleMarker } from 'leaflet'
+import { CircleMarker as LeafletCircleMarker, latLng } from 'leaflet'
 
 import { withLeaflet } from './context'
 import Path from './Path'
-import type { LatLng, PathProps, latLng } from './types'
+import type { LatLng, PathProps } from './types'
 
 type LeafletElement = LeafletCircleMarker
 type Props = {

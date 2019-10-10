@@ -1,10 +1,10 @@
 // @flow
 
-import { Circle as LeafletCircle } from 'leaflet'
+import { Circle as LeafletCircle, latLng } from 'leaflet'
 
 import { withLeaflet } from './context'
 import Path from './Path'
-import type { LatLng, MapLayerProps, PathOptions, latLng } from './types'
+import type { LatLng, MapLayerProps, PathOptions } from './types'
 
 type LeafletElement = LeafletCircle
 type Props = {
